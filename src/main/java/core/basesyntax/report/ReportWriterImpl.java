@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class ReportWriterImpl implements ReportWriter{
+public class ReportWriterImpl implements ReportWriter {
     @Override
     public void writeReport() {
         ReportService reportService = new ReportServiceImpl();

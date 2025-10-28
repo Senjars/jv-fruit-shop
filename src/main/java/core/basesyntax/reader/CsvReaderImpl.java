@@ -1,12 +1,12 @@
 package core.basesyntax.reader;
 
-import java.io.*;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 
-public class CSVReaderImpl implements CSVReader {
+public class CsvReaderImpl implements CsvReader {
 
     @Override
     public List<String> read(String pathFile) {

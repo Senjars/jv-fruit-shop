@@ -2,7 +2,6 @@ package core.basesyntax.reader;
 
 import java.util.List;
 
-public interface CSVReader {
-
+public interface CsvReader {
     List<String> read(String pathFile);
 }

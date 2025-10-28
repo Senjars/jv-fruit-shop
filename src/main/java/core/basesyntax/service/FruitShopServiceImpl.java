@@ -4,11 +4,10 @@ import core.basesyntax.db.FruitTransaction;
 import core.basesyntax.db.Storage;
 import core.basesyntax.handler.OperationHandler;
 import core.basesyntax.strategy.OperationStrategy;
-
 import java.util.List;
 import java.util.Map;
 
-public class FruitShopServiceImpl implements FruitShopService{
+public class FruitShopServiceImpl implements FruitShopService {
     private final OperationStrategy strategy;
     private final Map<String, Integer> storage;
 

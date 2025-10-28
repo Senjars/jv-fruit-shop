@@ -1,10 +1,9 @@
 package core.basesyntax.report;
 
 import core.basesyntax.db.Storage;
-
 import java.util.Map;
 
-public class ReportServiceImpl implements ReportService{
+public class ReportServiceImpl implements ReportService {
 
     @Override
     public String generateReport() {
