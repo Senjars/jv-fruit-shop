@@ -1,7 +1,7 @@
 package core.basesyntax.converter;
 
-import core.basesyntax.model.FruitTransaction;
 import core.basesyntax.db.Operation;
+import core.basesyntax.model.FruitTransaction;
 import java.util.ArrayList;
 import java.util.List;
 
