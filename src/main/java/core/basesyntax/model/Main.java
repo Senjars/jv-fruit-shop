@@ -2,21 +2,21 @@ package core.basesyntax.model;
 
 import core.basesyntax.converter.DataConverter;
 import core.basesyntax.converter.DataConverterImpl;
-import core.basesyntax.db.FruitTransaction;
 import core.basesyntax.db.Operation;
-import core.basesyntax.handler.BalanceOperation;
-import core.basesyntax.handler.OperationHandler;
-import core.basesyntax.handler.PurchaseOperation;
-import core.basesyntax.handler.ReturnOperation;
-import core.basesyntax.handler.SupplyOperation;
-import core.basesyntax.reader.CsvReader;
-import core.basesyntax.reader.CsvReaderImpl;
-import core.basesyntax.report.ReportService;
-import core.basesyntax.report.ReportServiceImpl;
-import core.basesyntax.report.ReportWriter;
-import core.basesyntax.report.ReportWriterImpl;
-import core.basesyntax.service.FruitShopService;
-import core.basesyntax.service.FruitShopServiceImpl;
+import core.basesyntax.db.Storage;
+import core.basesyntax.strategy.BalanceOperation;
+import core.basesyntax.strategy.OperationHandler;
+import core.basesyntax.strategy.PurchaseOperation;
+import core.basesyntax.strategy.ReturnOperation;
+import core.basesyntax.strategy.SupplyOperation;
+import core.basesyntax.service.impl.CsvReader;
+import core.basesyntax.service.impl.CsvReaderImpl;
+import core.basesyntax.service.impl.ReportService;
+import core.basesyntax.service.impl.ReportServiceImpl;
+import core.basesyntax.service.impl.ReportWriter;
+import core.basesyntax.service.impl.ReportWriterImpl;
+import core.basesyntax.service.impl.FruitShopService;
+import core.basesyntax.service.impl.FruitShopServiceImpl;
 import core.basesyntax.strategy.OperationStrategy;
 import core.basesyntax.strategy.OperationStrategyImpl;
 import java.util.HashMap;
@@ -43,9 +43,9 @@ public class Main {
         fruitShopService.process(transaction);
 
         ReportService reportService = new ReportServiceImpl();
-        reportService.generateReport();
+        String report = reportService.generateReport(Storage.getStorage());
 
         ReportWriter reportWriter = new ReportWriterImpl();
-        reportWriter.writeReport();
+        reportWriter.writeReport(report, "report.txt");
     }
 }

@@ -1,15 +1,14 @@
-package core.basesyntax.report;
+package core.basesyntax.service.impl;
 
-import core.basesyntax.db.Storage;
 import java.util.Map;
 
 public class ReportServiceImpl implements ReportService {
 
     @Override
-    public String generateReport() {
+    public String generateReport(Map<String, Integer> fruitData) {
         StringBuilder builder = new StringBuilder("fruit,quantity\n");
 
-        for (Map.Entry<String, Integer> entry : Storage.storage.entrySet()) {
+        for (Map.Entry<String, Integer> entry : fruitData.entrySet()) {
             builder.append(entry.getKey() + "," + entry.getValue() + "\n");
         }
 

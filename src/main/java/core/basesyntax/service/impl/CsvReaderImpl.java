@@ -1,9 +1,8 @@
-package core.basesyntax.reader;
+package core.basesyntax.service.impl;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Collections;
 import java.util.List;
 
 public class CsvReaderImpl implements CsvReader {
@@ -13,9 +12,7 @@ public class CsvReaderImpl implements CsvReader {
         try {
             return Files.readAllLines(Paths.get(pathFile));
         } catch (IOException e) {
-            System.out.println("Cannot read file:" + pathFile);
-            e.printStackTrace();
-            return Collections.emptyList();
+        throw new RuntimeException("Cannot read file: " + pathFile, e);
         }
     }
 }

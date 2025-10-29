@@ -1,6 +1,7 @@
-package core.basesyntax.handler;
+package core.basesyntax.strategy;
 
-import core.basesyntax.db.FruitTransaction;
+import core.basesyntax.model.FruitTransaction;
+
 import java.util.Map;
 
 public class SupplyOperation implements OperationHandler {

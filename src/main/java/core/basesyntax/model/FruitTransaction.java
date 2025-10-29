@@ -1,4 +1,6 @@
-package core.basesyntax.db;
+package core.basesyntax.model;
+
+import core.basesyntax.db.Operation;
 
 public class FruitTransaction {
 
